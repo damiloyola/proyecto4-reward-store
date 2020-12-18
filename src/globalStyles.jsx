@@ -1,5 +1,3 @@
-import Header from "./components/Header";
-
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -15,13 +13,4 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-function App() {
-    return (
-        <div className="App">
-            <GlobalStyle />
-            <Header />
-        </div>
-    );
-}
-
-export default App;
+export default GlobalStyle

@@ -8,7 +8,7 @@ display:flex;
 justify-content:space-between;
 padding:.5%;
 `;
-const Coins= styled.nav`
+const Coins= styled.div`
 cursor:pointer;
 width:40%;
 min-width:75px;
