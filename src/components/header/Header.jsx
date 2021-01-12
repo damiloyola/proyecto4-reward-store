@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import heroImg from '../assets/header-x1.png'
-import logo from '../assets/aerolab-logo.svg'
-import coin from '../assets/icons/coin.svg'
+import heroImg from '../../assets/header-x1.png'
+import logo from '../../assets/aerolab-logo.svg'
+import coin from '../../assets/icons/coin.svg'
 const Nav = styled.nav`
 display:flex;
 justify-content:space-between;
@@ -51,7 +51,7 @@ const Title= styled.h1`
 `;
 const Header = () =>{
 
-    return (<div>
+    return (<header>
                 <Nav>
                     <img src={logo} alt="logo aerolab"/>
                     <User>
@@ -62,7 +62,7 @@ const Header = () =>{
                 <Hero>
                     <Title>Electronics</Title>
                 </Hero>
-             </div>)
+             </header>)
 }
 
 
