@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import heroImg from '../../assets/header-x1.png'
+import {Link} from 'react-router-dom';
 import logo from '../../assets/aerolab-logo.svg'
 import coin from '../../assets/icons/coin.svg'
 const Nav = styled.nav`
@@ -28,40 +28,46 @@ const User = styled.div`
 width:20%;
 display:flex;
 justify-content:space-around;
+
 align-items:center;
  
 
 `;
-const Hero = styled.div`
-    width:100%;
-    height:400px;
-    background-image: url(${heroImg});
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position:center;
-    position:relative;
+
+const Ul = styled.ul`
+    display:flex;
+    width:40%;
+    justify-content:space-between;
+    align-items:center;
+    list-style:none;
+`;
+const Li = styled.li`
+    text-decoration:none;
 `;
 
-const Title= styled.h1`
-    position:absolute;
-    top:60%;
-    left:20%;
-    font-size:64px;
-    color:white;
-`;
 const Header = () =>{
 
     return (<header>
                 <Nav>
-                    <img src={logo} alt="logo aerolab"/>
+                    <Ul>
+                        <Link to="/">
+                            <img src={logo} alt="logo aerolab"/>
+                        </Link>
+                        <Link to="/history">
+                            <Li>Purchase History</Li>
+                        </Link>
+                        <Link to="/coins">
+                            <Li>Get Coins</Li>
+                        </Link>
+                    </Ul>
+                    
                     <User>
                         <p>Julia Coi</p>
                         <Coins><span>6000</span> <img src={coin} alt=""/></Coins>
                     </User>
                 </Nav>
-                <Hero>
-                    <Title>Electronics</Title>
-                </Hero>
+               
+                
              </header>)
 }
 
