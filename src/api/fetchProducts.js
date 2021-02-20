@@ -1,7 +1,9 @@
-import {url, apiFetch } from './api'
+import { url, apiFetch } from "./api";
 
-
-export const fetchProducts = () => {
+export const fetchProducts = async (setProducts) => {
     const endpoint = `${url}products`;
-    return apiFetch(endpoint);
-  };
+
+    const newProducts = await apiFetch(endpoint);
+    console.log(newProducts);
+    setProducts(newProducts);
+};
