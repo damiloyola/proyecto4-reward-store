@@ -15,7 +15,7 @@ const Container= styled.div`
 
 const ItemContainer = () => {
 
-  const [products, setProducts]  = useContext(Context);
+  const {products, setProducts}  = useContext(Context);
 
   return(
   <Container>
