@@ -10,6 +10,6 @@ export const fetchProducts = async (setProducts) => {
     const endpoint = `${url}products`;
 
     const newProducts = await apiFetch(endpoint, headers);
-    console.log(newProducts);
+
     setProducts(newProducts);
 };
