@@ -1,9 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
-import Pagination from "./Pagination";
+
 import Arrow from "../../assets/icons/arrow-right.svg";
 import { Context } from "../context/Context";
-import { fetchProducts } from "../../api/fetchProducts";
 
 const FilterContainer = styled.div`
     display: flex;
@@ -63,7 +62,6 @@ const Filters = () => {
     return (
         <Container>
             <LeftContainer>
-                <Pagination />
                 <FilterContainer>
                     <select name="category" onChange={handleCategory}>
                         <option value={"all categories"}>All Categories</option>
