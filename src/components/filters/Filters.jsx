@@ -1,17 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 
-import Arrow from "../../assets/icons/arrow-right.svg";
 import { Context } from "../context/Context";
-
-const FilterContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding-left: 20px;
-    border-left: 1px solid #d9d9d9;
-    align-items: center;
-    color: #a3a3a3;
-`;
 
 const Container = styled.div`
     display: flex;
@@ -22,29 +12,15 @@ const Container = styled.div`
     border-bottom: 1px solid #d9d9d9;
 `;
 
-const LeftContainer = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-const Selector = styled.ul`
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-`;
-
-const Li = styled.li`
-    margin-right: 15px;
-    background-color: #ededed;
-    border-radius: 20.5px;
-    color: #a3a3a3;
-    padding: 10px 15px;
+const Select = styled.select`
+    font-size: 16px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    margin: 0 10px;
     cursor: pointer;
 `;
 
-const Img = styled.div`
-    cursor: pointer;
-`;
 const Filters = () => {
     const { filters, setFilters } = useContext(Context);
     const { allProducts, setAllProducts } = useContext(Context);
@@ -61,21 +37,14 @@ const Filters = () => {
 
     return (
         <Container>
-            <LeftContainer>
-                <FilterContainer>
-                    <select name="category" onChange={handleCategory}>
-                        <option value={"all categories"}>All Categories</option>
-                        {categories.map((category) => (
-                            <option key={category} value={category}>
-                                {category}
-                            </option>
-                        ))}
-                    </select>
-                </FilterContainer>
-            </LeftContainer>
-            <Img>
-                <img src={Arrow} alt="next page" />
-            </Img>
+            <Select name="category" onChange={handleCategory}>
+                <option value={"all categories"}>All Categories</option>
+                {categories.map((category) => (
+                    <option key={category} value={category}>
+                        {category}
+                    </option>
+                ))}
+            </Select>
         </Container>
     );
 };

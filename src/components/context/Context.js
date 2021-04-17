@@ -18,6 +18,8 @@ export default function Provider(props) {
         price: "all prices",
     });
 
+    const [purchaseHistory, setPurchaseHistory] = useState([]);
+
     useEffect(() => {
         fetchProducts(setProducts);
         fetchProducts(setAllProducts);
@@ -35,6 +37,8 @@ export default function Provider(props) {
                 setUser,
                 filters,
                 setFilters,
+                purchaseHistory,
+                setPurchaseHistory,
             }}
         >
             {props.children}
