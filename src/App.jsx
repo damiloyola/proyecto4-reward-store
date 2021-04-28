@@ -3,21 +3,23 @@ import Products from "./components/main/Products";
 import Coins from "./components/main/Coins";
 import History from "./components/main/History";
 import Provider from "./components/context/Context";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
     return (
         <div className="App">
-            <Provider>
-                <Router>
+            <Router>
+                <Provider>
                     <Header />
                     <main>
-                        <Route path="/" component={Products} exact />
-                        <Route path="/coins" component={Coins} />
-                        <Route path="/history" component={History} />
+                        <Switch>
+                            <Route path="/" component={Products} exact />
+                            <Route path="/coins" component={Coins} />
+                            <Route path="/history" component={History} />
+                        </Switch>
                     </main>
-                </Router>
-            </Provider>
+                </Provider>
+            </Router>
         </div>
     );
 }
